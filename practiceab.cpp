@@ -183,7 +183,96 @@
 
 
 
-#include<iostream>
+// #include<iostream>
+
+// using namespace std;
+
+// class Rectangle
+// {
+//     private:
+//         int length;
+//         int breadth;
+//     public:
+
+//     Rectangle (int l = 1, int b = 1) {
+//         setLength(l);
+//         setBreadth(b);
+//     }
+//     Rectangle(Rectangle &r)
+//     {
+//         length = r.length;
+//         breadth = r.breadth;
+//     }
+
+
+//         void setLength(int l){
+//             if(l > 0)
+//                 length = l;
+//             else
+//                 length = 1;
+//         }
+//         void setBreadth(int b){
+//             if(b > 0)
+//                 breadth = b;
+//             else
+//                 breadth = 1;
+//         }
+//         int getLength() { return length;}
+//         int getBreadth() { return breadth;}
+
+//         int area (){
+//             return length * breadth;
+//         }
+//         int perimeter() {
+//             return 2 * (length + breadth);
+//         }
+// };
+
+// int main() {
+//     Rectangle r1(10,5);
+//     Rectangle r2(r1);
+//     cout << r2.area() << endl;
+// }
+
+
+
+// #include <iostream>
+
+// using namespace std;
+
+// class Rectangle
+// {
+//     private:
+//         int length;
+//         int breadth;
+    
+//     public:
+//         Rectangle(); //Non Parameterized Constructor
+//         Rectangle(int l = 1, int b = 1); //Parameterized Constructor
+//         Rectangle(Rectangle &r); //Copy Constrtuctor 
+//         void setLength(int l); //Mutators
+//         void setBreadth(int b); //Mutators
+//         int getLength(); //Accessor
+//         int getBreadth(); //Accessor
+//         int area(); //Facilitators
+//         int perimeter(); //Facilitators
+//         int isSquare(); //Inspective Function or Enquiry
+//         ~Rectangle(); //Destructor
+// };
+
+// int Rectangle::perimeter(){
+//     return 2 * (length + breadth);
+// }
+
+// int main() {
+//     Rectangle r(10,5);
+//     // cout << r.area() <<endl;
+//     cout << r.perimeter() <<endl;
+// }
+
+
+
+#include <iostream>
 
 using namespace std;
 
@@ -193,43 +282,10 @@ class Rectangle
         int length;
         int breadth;
     public:
-    Rectangle () {
-        length = 1;
-        breadth = 1;
-    }
 
-    Rectangle (int l, int b) {
-        setLength(l);
-        setBreadth(b);
-    }
-
-
-
-
-        void setLength(int l){
-            if(l > 0)
-                length = l;
-            else
-                length = 1;
-        }
-        void setBreadth(int b){
-            if(b > 0)
-                breadth = b;
-            else
-                breadth = 1;
-        }
-        int getLength() { return length;}
-        int getBreadth() { return breadth;}
-
-        int area (){
-            return length * breadth;
-        }
-        int perimeter() {
-            return 2 * (length + breadth);
-        }
 };
 
-int main() {
-    Rectangle r1(10,5);
-    cout << r1.area() << endl;
+int main() 
+{
+
 }
