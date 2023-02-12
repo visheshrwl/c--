@@ -282,10 +282,31 @@ class Rectangle
         int length;
         int breadth;
     public:
-
+        Rectangle();    //Constructors
+        Rectangle(int l, int b);    //Constructors
+        Rectangle(Rectangle &r);    //Constructors
+        int getLength() {return length;};    //Accessors
+        int getBreadth() {return breadth;};   //Accessors
+        void setLength(int l);      //Mutators
+        void setBreadth(int b);     //Mutators
+        int area();             //Facilitators
+        int perimeter();        //Facilitators
+        bool isSquare();        //Inspective Function
+        ~Rectangle();           //Destructors
 };
+
+
 
 int main() 
 {
 
 }
+
+
+Rectangle::Rectangle()
+{
+    length = 1;
+    breadth = 1;
+}
+
+Rectangle::Rectangle
