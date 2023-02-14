@@ -272,41 +272,178 @@
 
 
 
-#include <iostream>
+// #include <iostream>
 
-using namespace std;
+// using namespace std;
 
-class Rectangle
-{
-    private:
-        int length;
-        int breadth;
-    public:
-        Rectangle();    //Constructors
-        Rectangle(int l, int b);    //Constructors
-        Rectangle(Rectangle &r);    //Constructors
-        int getLength() {return length;};    //Accessors
-        int getBreadth() {return breadth;};   //Accessors
-        void setLength(int l);      //Mutators
-        void setBreadth(int b);     //Mutators
-        int area();             //Facilitators
-        int perimeter();        //Facilitators
-        bool isSquare();        //Inspective Function
-        ~Rectangle();           //Destructors
-};
-
-
-
-int main() 
-{
-
-}
+// class Rectangle
+// {
+//     private:
+//         int length;
+//         int breadth;
+//     public:
+//         Rectangle();    //Constructors
+//         Rectangle(int l, int b);    //Constructors
+//         Rectangle(Rectangle &r);    //Constructors
+//         int getLength() {return length;};    //Accessors
+//         int getBreadth() {return breadth;};   //Accessors
+//         void setLength(int l);      //Mutators
+//         void setBreadth(int b);     //Mutators
+//         int area();             //Facilitators
+//         int perimeter();        //Facilitators
+//         bool isSquare();        //Inspective Function
+//         ~Rectangle();           //Destructors
+// };
 
 
-Rectangle::Rectangle()
-{
-    length = 1;
-    breadth = 1;
-}
 
-Rectangle::Rectangle
+// int main() 
+// {
+//     Rectangle r1(10,10);
+//     cout << "Area is " << r1.area() << endl;
+//     if(r1.isSquare())
+//         cout << "Yes" <<endl;
+//     else
+//         cout << "No" <<endl;
+// }
+
+
+// Rectangle::Rectangle()
+// {
+//     length = 1;
+//     breadth = 1;
+// }
+
+// Rectangle::Rectangle(int l, int b)
+// {
+//     length = l;
+//     breadth = b;
+// }
+
+// Rectangle :: Rectangle(Rectangle &r)
+// {
+//     length = r.length;
+//     breadth = r.breadth;
+// }
+
+// void Rectangle::setLength(int l)
+// {
+//     length = l;
+// }
+
+// void Rectangle::setBreadth(int b)
+// {
+//     breadth = b;
+// }
+
+// int Rectangle::area()
+// {
+//     return length * breadth;
+// }
+
+// int Rectangle::perimeter()
+// {
+//     return 2*(length + breadth);
+// }
+
+// bool Rectangle::isSquare() 
+// {
+//     return length == breadth;
+// }
+
+// Rectangle::~Rectangle()
+// {
+//     cout << "Rectangle Destroyed" << endl;
+// }
+
+
+
+// #include<iostream>
+
+// using namespace std;
+
+// class Rectangle {
+//     private: 
+//         int length;
+//         int breadth;
+//     public:
+//         Rectangle(int length, int breadth)
+//         {
+//             this->length = length;
+//             this->breadth = breadth;
+//         }
+
+//         int area(){
+//             return length * breadth;
+//         }
+
+//         int perimeter(){
+//             return 2*(length + breadth);
+//         }
+// };
+
+// int main(){
+//     Rectangle r1(10,5);
+//     cout << "Area is " << r1.area();
+//     return 0;
+// }
+
+
+
+
+// #include <iostream>
+
+// using namespace std;
+
+// class Student
+// {
+//     private:
+//         int roll_no;
+//         string name;
+//         int mathsMarks;
+//         int phyMarks;
+//         int chemMarks;
+//     public:
+//         Student(int r, string n, int m, int p, int c)
+//         {
+//             roll_no = r;
+//             name = n;
+//             mathsMarks = m;
+//             phyMarks = p;
+//             chemMarks = c;
+//         }
+//         int total(){
+//             return mathsMarks + phyMarks + chemMarks;
+//         }
+//         char grade()
+//         {
+//             float average = total()/3;
+//             if (average > 60)
+//             {
+//                 return 'A';
+//             }
+//             else if (average >= 40 && average < 60)
+//             {
+//                 return 'B';
+//             }
+//             else
+//                 return 'C';
+//         }
+// };
+
+// int main(){
+//     int roll_no;
+//     string name;
+//     int m,p,c;
+
+//     cout << "Enter Roll Number of a Student: ";
+//     cin >> roll_no;
+//     cout << "Enter Name of the Student: ";
+//     cin >> name;
+//     cout << "Enter marks of all 3 subjects";
+//     cin >> m >> p >> c;
+
+//     Student s(roll_no, name, m,p,c);
+//     cout << "Total Marks: "<<s.total()<<endl;
+//     cout << "Grade of Student: " << s.grade() <<endl;
+// }
