@@ -326,7 +326,7 @@ int main(){
 
     Rectangle rect;
 
-    std::cout << ::x<< std::endl;
+    std::cout << ::x << std::endl;
     std::cout << x <<std::endl;
     std::cout << rect.x ;
     }
