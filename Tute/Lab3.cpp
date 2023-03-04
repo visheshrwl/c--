@@ -438,3 +438,174 @@ int main() {
 
     return 0;
 }
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+    private:
+        int value;
+    public:
+        MyClass() {
+            value = 0;
+        }
+        void setValue(int v) {
+            value = v;
+        }
+        int getValue() {
+            return value;
+        }
+        void printValue() {
+            cout << "Value: " << value << endl;
+        }
+};
+
+int main() {
+    MyClass obj1;
+    obj1.setValue(10);
+
+    MyClass* ptr1 = &obj1;
+    ptr1->printValue();
+
+    MyClass* ptr2 = new MyClass;
+    ptr2->setValue(20);
+    (*ptr2).printValue();
+
+    MyClass obj3;
+    obj3.setValue(30);
+    obj3.printValue();
+
+    MyClass* ptr3 = &obj3;
+    ptr3->printValue();
+
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+class MyClass2;
+
+class MyClass1 {
+    private:
+        int value;
+    public:
+        MyClass1(int v) {
+            value = v;
+        }
+        friend void swapValues(MyClass1& obj1, MyClass2& obj2);
+};
+
+class MyClass2 {
+    private:
+        int value;
+    public:
+        MyClass2(int v) {
+            value = v;
+        }
+        friend void swapValues(MyClass1& obj1, MyClass2& obj2);
+};
+
+void swapValues(MyClass1& obj1, MyClass2& obj2) {
+    int temp = obj1.value;
+    obj1.value = obj2.value;
+    obj2.value = temp;
+}
+
+int main() {
+    MyClass1 obj1(10);
+    MyClass2 obj2(20);
+
+    cout << "Before swapping:" << endl;
+    cout << "obj1.value = " << obj1.value << endl;
+    cout << "obj2.value = " << obj2.value << endl;
+
+    swapValues(obj1, obj2);
+
+    cout << "After swapping:" << endl;
+    cout << "obj1.value = " << obj1.value << endl;
+    cout << "obj2.value = " << obj2.value << endl;
+
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+class MyClass2;
+
+class MyClass1 {
+    private:
+        int value;
+    public:
+        MyClass1(int v) {
+            value = v;
+        }
+        friend int addValues(MyClass1& obj1, MyClass2& obj2);
+};
+
+class MyClass2 {
+    private:
+        int value;
+    public:
+        MyClass2(int v) {
+            value = v;
+        }
+        friend int addValues(MyClass1& obj1, MyClass2& obj2);
+};
+
+int addValues(MyClass1& obj1, MyClass2& obj2) {
+    return obj1.value + obj2.value;
+}
+
+int main() {
+    MyClass1 obj1(10);
+    MyClass2 obj2(20);
+
+    cout << "The sum of obj1.value and obj2.value is: " << addValues(obj1, obj2) << endl;
+
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+    private:
+        int value;
+    public:
+        MyClass(int v) {
+            value = v;
+        }
+        friend class FriendClass;
+};
+
+class FriendClass {
+    public:
+        void printValue(MyClass& obj) {
+            cout << "The value of MyClass object is: " << obj.value << endl;
+        }
+};
+
+int main() {
+    MyClass obj(10);
+    FriendClass fc;
+
+    fc.printValue(obj);
+
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int *p = new int; // allocate memory for an integer
+    *p = 10; // store value 10 in the allocated memory
+
+    cout << "The value stored in the allocated memory is: " << *p << endl;
+
+    delete p; // free the allocated memory
+
+    return 0;
+}
