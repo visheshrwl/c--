@@ -163,11 +163,3 @@
 //         s.display();
 //     return 0;
 // }
-
-#include<iostream>
-using namespace std;
-
-#define y 10
-
-int main(){
-}

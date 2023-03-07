@@ -16,12 +16,3 @@ class Person{
             cout << id << name[100];
         }
 };
-
-class
-
-int main(){
-    Student s;
-    s.set_s();
-    s.display_s();
-    return 0;
-}

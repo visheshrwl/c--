@@ -62,5 +62,5 @@ int main(){
     c2.real = 10; c2.img = 5;
     
     c3 = c1.add(c2);
-    cout << c3.real << "+i"<< c3.img << endl;
+    cout << c3.real << " + "<< c3.img << "i"<< endl;
 }
