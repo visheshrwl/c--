@@ -1,47 +1,47 @@
 #include <iostream>
 using namespace std;
 
-class Complex{
+class MyClass2;
+
+class MyClass1 {
     private:
-        int real;
-        int img;
+        int value;
     public:
-        Complex () {}
-        Complex(int r, int i){
-            real =r;
-            img = i;
+        MyClass1(int v) {
+            value = v;
         }
-        void set(int r, int i){
-            real =r;
-            img = i;
-        }
-        void display() {
-            if(img>= 0){
-                cout << real << " + "<< img << "i"<<endl;
-            }
-            else{
-                cout << real << " - "<< -img<< "i" <<endl;
-            }
-        }
-        Complex sum(Complex c){
-            int r = real + c.real;
-            int i = img + c.img;
-            Complex result(r, i);
-            return result;
-        }
+        friend void swapValues(MyClass1& obj1, MyClass2& obj2);
 };
 
+class MyClass2 {
+    private:
+        int value;
+    public:
+        MyClass2(int v) {
+            value = v;
+        }
+        friend void swapValues(MyClass1& obj1, MyClass2& obj2);
+};
 
-int main(){
-    Complex c1,c2;
-    c1.set(2,3);
-    c2.set(4,-1);
-    c1.display();
-    c2.display();
+void swapValues(MyClass1& obj1, MyClass2& obj2) {
+    int temp = obj1.value;
+    obj1.value = obj2.value;
+    obj2.value = temp;
+}
 
-    Complex result = c1.sum(c2);
+int main() {
+    MyClass1 obj1(10);
+    MyClass2 obj2(20);
 
-    cout << "Sum is ";
-    result.display();
+    cout << "Before swapping:" << endl;
+    cout << "obj1.value = " << obj1.value << endl;
+    cout << "obj2.value = " << obj2.value << endl;
+
+    swapValues(obj1, obj2);
+
+    cout << "After swapping:" << endl;
+    cout << "obj1.value = " << obj1.value << endl;
+    cout << "obj2.value = " << obj2.value << endl;
+
     return 0;
 }
