@@ -1,89 +1,89 @@
-// // #include <iostream>
-// // using namespace std;
+// #include <iostream>
+// using namespace std;
 
-// // class Time {
-// // private:
-// //     int h, m, s;
-// // public:
-// //     Time(int hours = 0, int minutes = 0, int seconds = 0) {
-// //         h = hours;
-// //         m = minutes;
-// //         s = seconds;
-// //     }
-// //     void show() {
-// //         cout << h << ":" << m << ":" << s << endl;
-// //     }
-// //     Time operator+(const Time& t) const {
-// //         int totalSeconds = s + t.s + (m + t.m) * 60 + (h + t.h) * 3600;
-// //         int newHours = totalSeconds / 3600;
-// //         int newMinutes = (totalSeconds % 3600) / 60;
-// //         int newSeconds = totalSeconds % 60;
-// //         return Time(newHours, newMinutes, newSeconds);
-// //     }
-// // };
+// class Time {
+// private:
+//     int h, m, s;
+// public:
+//     Time(int hours = 0, int minutes = 0, int seconds = 0) {
+//         h = hours;
+//         m = minutes;
+//         s = seconds;
+//     }
+//     void show() {
+//         cout << h << ":" << m << ":" << s << endl;
+//     }
+//     Time operator+(const Time& t) const {
+//         int totalSeconds = s + t.s + (m + t.m) * 60 + (h + t.h) * 3600;
+//         int newHours = totalSeconds / 3600;
+//         int newMinutes = (totalSeconds % 3600) / 60;
+//         int newSeconds = totalSeconds % 60;
+//         return Time(newHours, newMinutes, newSeconds);
+//     }
+// };
 
-// // int main() {
-// //     Time t1(5, 15, 34), t2(9, 53, 58), t3;
-// //     t3 = t1 + t2;
-// //     t3.show();
-// //     return 0;
-// // }
+// int main() {
+//     Time t1(5, 15, 34), t2(9, 53, 58), t3;
+//     t3 = t1 + t2;
+//     t3.show();
+//     return 0;
+// }
 
 
-// // #include <iostream>
-// // #include <cstring>
-// // using namespace std;
+#include <iostream>
+#include <cstring>
+using namespace std;
 
-// // class String {
-// // private:
-// //     char* str;
-// // public:
-// //     String(const char* s = "") {
-// //         str = new char[strlen(s) + 1];
-// //         strcpy(str, s);
-// //     }
-// //     String(const String& s) {
-// //         str = new char[strlen(s.str) + 1];
-// //         strcpy(str, s.str);
-// //     }
-// //     ~String() {
-// //         delete[] str;
-// //     }
-// //     String& operator=(const String& s) {
-// //         if (this != &s) {
-// //             delete[] str;
-// //             str = new char[strlen(s.str) + 1];
-// //             strcpy(str, s.str);
-// //         }
-// //         return *this;
-// //     }
-// //     bool operator==(const String& s) const {
-// //         return strcmp(str, s.str) == 0;
-// //     }
-// //     String operator+(const String& s) const {
-// //         char* newStr = new char[strlen(str) + strlen(s.str) + 1];
-// //         strcpy(newStr, str);
-// //         strcat(newStr, s.str);
-// //         String result(newStr);
-// //         delete[] newStr;
-// //         return result;
-// //     }
-// //     void show() {
-// //         cout << str << endl;
-// //     }
-// // };
+class String {
+private:
+    char* str;
+public:
+    String(const char* s = "") {
+        str = new char[strlen(s) + 1];
+        strcpy(str, s);
+    }
+    String(const String& s) {
+        str = new char[strlen(s.str) + 1];
+        strcpy(str, s.str);
+    }
+    ~String() {
+        delete[] str;
+    }
+    String& operator=(const String& s) {
+        if (this != &s) {
+            delete[] str;
+            str = new char[strlen(s.str) + 1];
+            strcpy(str, s.str);
+        }
+        return *this;
+    }
+    bool operator==(const String& s) const {
+        return strcmp(str, s.str) == 0;
+    }
+    String operator+(const String& s) const {
+        char* newStr = new char[strlen(str) + strlen(s.str) + 1];
+        strcpy(newStr, str);
+        strcat(newStr, s.str);
+        String result(newStr);
+        delete[] newStr;
+        return result;
+    }
+    void show() {
+        cout << str << endl;
+    }
+};
 
-// // int main() {
-// //     String s1("Hello"), s2("world"), s3("Hello"), s4;
-// //     s4 = s1 + s2;
-// //     s1.show();
-// //     s2.show();
-// //     s3.show();
-// //     s4.show();
-// //     cout << (s1 == s2) << endl;
-// //     cout << (s1 == s3) << endl;
-// //     return 0;
-// // }
+int main() {
+    String s1("Hello"), s2("world"), s3("Hello"), s4;
+    s4 = s1 + s2;
+    s1.show();
+    s2.show();
+    s3.show();
+    s4.show();
+    cout << (s1 == s2) << endl;
+    cout << (s1 == s3) << endl;
+    return 0;
+}
 
 
 // #include <iostream>
