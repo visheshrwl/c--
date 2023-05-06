@@ -2,5 +2,16 @@
     "files.associations": {
         "xiosbase": "cpp",
         "iostream": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "adduser",
+        "deleteuser",
+        "Geeksfor",
+        "mainmenu",
+        "searchallusertodisplay",
+        "searchspecificuser",
+        "updateuserasdeposit",
+        "updateuseraswithdraw",
+        "viewallusers"
+    ]
 }
